@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>num-iD — Numerical Intelligence for Telecom</title>
+  <meta name="description" content="Real-time MSISDN intelligence for routing, fraud prevention and number validation. Two products, one input: a phone number.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23050505'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23F2DF00'>iD</text></svg>">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__logo" aria-label="num-iD home">num-<span>iD</span></a>
+      <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#about">Company</a>
+        <a href="#resources">Resources</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="https://portal.num-id.com/" target="_blank" rel="noopener" class="btn btn--accent btn--sm nav__cta">Customer Portal</a>
+      </nav>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__grid container">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">Numerical intelligence · For telecom</p>
+          <h1 class="reveal d-1">Identify the network.<br>Verify the line.<br><em>Globally.</em></h1>
+          <p class="hero__sub reveal d-2">Real-time MSISDN intelligence for routing, fraud prevention and number validation. Two products, one input: a phone number.</p>
+          <div class="hero__actions reveal d-3">
+            <a href="#products" class="btn btn--accent">Explore the products</a>
+            <a href="#how" class="btn btn--ghost">How it works</a>
+          </div>
+          <a href="#resources" class="text-link reveal d-4">View technical documentation →</a>
+        </div>
+
+        <div class="hero__terminal reveal d-2" id="heroTerminal" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal__bar">
+              <span class="terminal__label">EU-WEST / MNP QUERY</span>
+              <span class="terminal__status"><i class="dot"></i>ONLINE · 184MS</span>
+            </div>
+            <div class="terminal__body">
+              <div class="tstep" data-step="1">
+                <span class="tstep__tag">INPUT</span>
+                <div class="tstep__main">+34 630 081 191</div>
+                <div class="tstep__meta">normalized: 34630081191</div>
+              </div>
+              <div class="tstep" data-step="2">
+                <span class="tstep__tag">PROCESSING</span>
+                <div class="tstep__rows">
+                  <div><span>Country:</span> ES</div>
+                  <div><span>Service:</span> MNP</div>
+                  <div><span>Nearest PoP:</span> EU-WEST</div>
+                </div>
+              </div>
+              <div class="tstep" data-step="3">
+                <span class="tstep__tag">RESULT</span>
+                <div class="tstep__rows">
+                  <div><span>Operator:</span> TELEFÓNICA MÓVILES ESPAÑA</div>
+                  <div><span>MCC:</span> 214 · <span>MNC:</span> 07</div>
+                  <div><span>Ported:</span> false · <span>RC:</span> 1-00</div>
+                </div>
+              </div>
+              <div class="tstep tstep--json" data-step="4">
+                <span class="tstep__tag">HTTP 201 / APPLICATION JSON</span>
+                <pre><code>{ "tn": "34630081191", "oc": "ES",
+  "mcc": "214", "mnc": "07",
+  "on": "TELEFÓNICA MÓVILES ESPAÑA",
+  "pi": false }</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll mono">SCROLL ↓</div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="stats__grid container">
+        <div class="stat reveal">
+          <div class="stat__num" data-count="300" data-prefix="&lt;" data-suffix=" ms">&lt;300 ms</div>
+          <div class="stat__label">MNP response · P95</div>
+        </div>
+        <div class="stat reveal d-1">
+          <div class="stat__num" data-count="800" data-prefix="&lt;" data-suffix=" ms">&lt;800 ms</div>
+          <div class="stat__label">HLR response · P95</div>
+        </div>
+        <div class="stat reveal d-2">
+          <div class="stat__num" data-count="100" data-suffix="+">100+</div>
+          <div class="stat__label">Countries in production</div>
+        </div>
+        <div class="stat reveal d-3">
+          <div class="stat__num" data-count="99.95" data-suffix="%">99.95%</div>
+          <div class="stat__label">Success ratio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT WE DO ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow reveal">What we do</p>
+        <h2 class="reveal d-1">We turn a phone number into an accurate routing decision.</h2>
+        <div class="about__cols">
+          <p class="reveal d-2">num-iD supercharges telecom with real-time data and advanced routing. We sit between your switching infrastructure and the world’s mobile networks, telling you exactly where any number is, who owns it today, and whether it’s reachable right now.</p>
+          <p class="reveal d-3">Carriers, MNVOs, fintech, and messaging aggregators use us to enhance security, crush fraud, and route traffic to the right operator — no matter the country, no matter the volume.</p>
+        </div>
+
+        <div class="pipeline reveal d-3">
+          <div class="pipeline__bar">
+            <span>ROUTING PIPELINE</span>
+            <span>HTTP/2 · KEEP-ALIVE · IP AUTH</span>
+          </div>
+          <div class="pipeline__flow">
+            <div class="pnode">
+              <div class="pnode__title">PHONE NUMBER</div>
+              <div class="pnode__sub">+34 630 081 191</div>
+            </div>
+            <div class="parrow">→</div>
+            <div class="pnode">
+              <div class="pnode__title">NORMALIZE</div>
+              <div class="pnode__sub">E.164 output</div>
+            </div>
+            <div class="parrow">→</div>
+            <div class="pnode">
+              <div class="pnode__title">IDENTIFY</div>
+              <div class="pnode__sub">current ownership · MCC/MNC</div>
+            </div>
+            <div class="parrow">→</div>
+            <div class="pnode">
+              <div class="pnode__title">VERIFY</div>
+              <div class="pnode__sub">reachability · roaming</div>
+            </div>
+            <div class="parrow">→</div>
+            <div class="pnode pnode--end">
+              <div class="pnode__title">ROUTE / REJECT / FALL BACK</div>
+              <div class="pnode__sub">downstream decision</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY NUM-ID ============ -->
+    <section class="section section--tint">
+      <div class="container">
+        <p class="eyebrow reveal">Why num-iD</p>
+        <h2 class="reveal d-1">Built for telecom traffic at global scale.</h2>
+        <div class="why__grid">
+          <article class="card reveal">
+            <div class="card__num">01</div>
+            <div class="why__visual">
+              <span class="why__big">184ms</span>
+              <span class="why__badge">p95 &lt;300ms</span>
+            </div>
+            <h3>Speed</h3>
+            <p>Sub-second response from our regional PoPs. HTTP/2 + keep-alive, designed to keep your switching latency budget intact.</p>
+          </article>
+          <article class="card reveal d-1">
+            <div class="card__num">02</div>
+            <div class="why__visual why__visual--pops">
+              <span class="pop-dot"></span><span class="pop-dot"></span><span class="pop-dot"></span>
+              <span class="pop-line"></span>
+            </div>
+            <h3>Regional reach</h3>
+            <p>Multiple regional points-of-presence so every customer routes to the nearest one — sub-second worldwide, no single chokepoint.</p>
+          </article>
+          <article class="card reveal d-2">
+            <div class="card__num">03</div>
+            <div class="why__visual">
+              <span class="why__big">100+</span>
+              <span class="why__badge">countries · daily refresh</span>
+            </div>
+            <h3>Global coverage</h3>
+            <p>MNP and HLR data from 100+ countries in production, sourced directly from regulators and carriers. Daily refresh, no stale records.</p>
+          </article>
+          <article class="card reveal d-3">
+            <div class="card__num">04</div>
+            <div class="why__visual why__visual--ported">
+              <span class="mono-sm">allocated network <em>→</em> current network</span>
+              <span class="why__badge">40%+ mobile numbers worldwide have been ported</span>
+            </div>
+            <h3>Data accuracy</h3>
+            <p>Authoritative ownership for any number — not just the original allocation. 40%+ of mobile numbers worldwide have been ported.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TWO PRODUCTS ============ -->
+    <section class="section" id="products">
+      <div class="container">
+        <p class="eyebrow reveal">Two products</p>
+        <h2 class="reveal d-1">One input. Two answers.</h2>
+        <p class="section__lead reveal d-2">A single HTTPS call to your nearest regional PoP — we operate multiple, so you route to the closest one. Sub-second response. Pick the product by the question you need answered.</p>
+
+        <div class="products__grid">
+          <article class="product card reveal">
+            <p class="product__tag">IDENTIFY · MNP LOOKUP</p>
+            <h3>Know which network owns the number today.</h3>
+            <p>Mobile Number Portability data tells you the current network provider of any mobile number, including ported numbers. Numbering ranges alone get it wrong for 40%+ of mobile traffic.</p>
+            <div class="product__block">
+              <span class="mono-sm muted">RETURNS</span>
+              <div class="chips">
+                <span class="chip">oc</span><span class="chip">on</span><span class="chip">od</span><span class="chip">mcc/mnc</span><span class="chip">pi</span><span class="chip">rc</span>
+              </div>
+            </div>
+            <div class="product__block">
+              <span class="mono-sm muted">USE CASES</span>
+              <ul class="ticklist">
+                <li>SMS routing optimization</li>
+                <li>Voice termination</li>
+                <li>A2P / RCS / VoLTE routing</li>
+                <li>Avoiding off-net surcharges</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="product card reveal d-1">
+            <p class="product__tag">VERIFY · HLR LOOKUP</p>
+            <h3>Check if the number is alive, right now.</h3>
+            <p>A live HLR Lookup queries the actual mobile network in real time. You get back not just routing data, but reachability — is the SIM registered, where is it roaming, can it receive messages now.</p>
+            <div class="product__block">
+              <span class="mono-sm muted">RETURNS</span>
+              <div class="chips">
+                <span class="chip">oc / mcc / mnc</span><span class="chip">vn</span><span class="chip">sn</span><span class="chip">rc</span>
+              </div>
+            </div>
+            <div class="product__block">
+              <span class="mono-sm muted">USE CASES</span>
+              <ul class="ticklist">
+                <li>Pre-send SMS validation</li>
+                <li>Fraud and ATO prevention</li>
+                <li>KYC / sign-up checks</li>
+                <li>Cleaning marketing lists</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--tint" id="how">
+      <div class="container">
+        <p class="eyebrow reveal">How it works</p>
+        <h2 class="reveal d-1">From phone number to accurate routing decision in three steps.</h2>
+        <div class="steps__grid">
+          <article class="step card reveal">
+            <div class="card__num">01</div>
+            <h3>Send the MSISDN</h3>
+            <p>One GET request to your nearest PoP. HTTPS, keep-alive, HTTP/2. Authenticated by source IP.</p>
+          </article>
+          <article class="step card reveal d-1">
+            <div class="card__num">02</div>
+            <h3>Get JSON back</h3>
+            <p>Sub-second response with the normalized fields you need. No parsing of supplier-specific formats.</p>
+          </article>
+          <article class="step card reveal d-2">
+            <div class="card__num">03</div>
+            <h3>Route accordingly</h3>
+            <p>Use the operator code, MCC/MNC and release code to make your downstream decision: deliver, reject, fall back.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ API DEMO ============ -->
+    <section class="section" id="demo">
+      <div class="container">
+        <p class="eyebrow reveal">API demonstration</p>
+        <h2 class="reveal d-1">A polished view of the request cycle — not a live external API call.</h2>
+
+        <div class="demo card reveal d-2">
+          <div class="demo__controls">
+            <div class="demo__tabs" role="tablist" aria-label="Service">
+              <button class="demo__tab is-active" data-service="mnp" role="tab" aria-selected="true">MNP</button>
+              <button class="demo__tab" data-service="hlr" role="tab" aria-selected="false">HLR</button>
+            </div>
+            <label class="demo__field">
+              <span class="mono-sm muted">MSISDN</span>
+              <input type="text" id="demoMsisdn" value="34630081191" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="16">
+            </label>
+          </div>
+
+          <div class="demo__curl mono" id="demoCurl"><span class="muted"># Single GET, IP-authenticated</span>
+curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">34630081191</span>?service=<span class="hl" id="curlService">mnp</span>" \
+  -H "Accept: application/json"</div>
+
+          <div class="demo__actions">
+            <button class="btn btn--accent" id="demoRun">Run visual request</button>
+            <span class="demo__auth mono-sm" id="demoAuth">AUTH · SOURCE IP</span>
+            <span class="demo__meta mono-sm" id="demoMeta"><span class="demo__code">HTTP 201</span><span class="demo__ms">184ms</span></span>
+          </div>
+
+          <div class="demo__response">
+            <pre class="mono" id="demoJson" aria-live="polite">{
+  "tn": "34630081191",
+  "oc": "ES",
+  "mcc": "214",
+  "mnc": "07",
+  "on": "TELEFÓNICA MÓVILES ESPAÑA",
+  "od": "87240034",
+  "nt": "wireless",
+  "pdi": true,
+  "pi": false,
+  "rc": "1-00"
+}</pre>
+            <button class="btn btn--ghost btn--sm" id="demoCopy">Copy JSON</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INFRASTRUCTURE ============ -->
+    <section class="section section--tint" id="infra">
+      <div class="container">
+        <p class="eyebrow reveal">Infrastructure</p>
+        <h2 class="reveal d-1">Built for telecom traffic at global scale.</h2>
+        <p class="section__lead reveal d-2">Requests route to the nearest regional PoP with redundant paths and normalized output. The system is designed for sub-second responses without adding unnecessary switching latency.</p>
+
+        <div class="chips chips--lg reveal d-2">
+          <span class="chip">HTTP/2</span>
+          <span class="chip">Keep-alive</span>
+          <span class="chip">IP authentication</span>
+          <span class="chip">Regional PoPs</span>
+          <span class="chip">Sub-second responses</span>
+          <span class="chip">Normalized output</span>
+        </div>
+
+        <div class="topology card reveal d-3">
+          <div class="pipeline__bar">
+            <span>REGIONAL ROUTING TOPOLOGY</span>
+            <span class="topology__legend">
+              <i class="leg leg--solid"></i>NEAREST POP
+              <i class="leg leg--dash"></i>REDUNDANT PATH
+            </span>
+          </div>
+          <svg viewBox="0 0 760 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Regional routing topology diagram">
+            <!-- paths -->
+            <path class="tp-line tp-line--main" d="M150 120 H 330"/>
+            <path class="tp-line tp-line--dash" d="M150 120 C 230 40, 300 40, 380 62"/>
+            <path class="tp-line tp-line--dash" d="M150 120 C 230 200, 300 200, 380 178"/>
+            <path class="tp-line tp-line--main" d="M430 120 H 610"/>
+            <path class="tp-line tp-line--dash" d="M430 70 C 500 70, 540 95, 610 112"/>
+            <path class="tp-line tp-line--dash" d="M430 170 C 500 170, 540 145, 610 128"/>
+            <!-- client -->
+            <rect x="40" y="96" width="110" height="48" rx="6" class="tp-node"/>
+            <text x="95" y="116" class="tp-label" text-anchor="middle">CLIENT</text>
+            <text x="95" y="132" class="tp-sub" text-anchor="middle">source IP</text>
+            <!-- pops -->
+            <rect x="330" y="96" width="100" height="48" rx="6" class="tp-node tp-node--hot"/>
+            <text x="380" y="116" class="tp-label tp-label--hot" text-anchor="middle">EU-WEST</text>
+            <text x="380" y="132" class="tp-sub" text-anchor="middle">nearest PoP</text>
+            <rect x="330" y="38" width="100" height="40" rx="6" class="tp-node"/>
+            <text x="380" y="62" class="tp-label" text-anchor="middle">US-EAST</text>
+            <rect x="330" y="162" width="100" height="40" rx="6" class="tp-node"/>
+            <text x="380" y="186" class="tp-label" text-anchor="middle">AP-SOUTH</text>
+            <!-- output -->
+            <rect x="610" y="96" width="120" height="48" rx="6" class="tp-node"/>
+            <text x="670" y="116" class="tp-label" text-anchor="middle">JSON</text>
+            <text x="670" y="132" class="tp-sub" text-anchor="middle">normalized output</text>
+            <!-- moving packets -->
+            <circle class="tp-packet" r="4"><animateMotion dur="3s" repeatCount="indefinite" path="M150 120 H 330"/></circle>
+            <circle class="tp-packet" r="4"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M430 120 H 610"/></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ USE-CASE MATRIX ============ -->
+    <section class="section" id="matrix">
+      <div class="container">
+        <p class="eyebrow reveal">Use-case matrix</p>
+        <h2 class="reveal d-1">Audience needs mapped to routing and validation work.</h2>
+
+        <div class="matrix reveal d-2">
+          <div class="matrix__audiences" role="tablist" aria-label="Audience">
+            <button class="matrix__aud is-active" data-aud="carriers" role="tab" aria-selected="true">Carriers</button>
+            <button class="matrix__aud" data-aud="mvnos" role="tab" aria-selected="false">MVNOs</button>
+            <button class="matrix__aud" data-aud="aggregators" role="tab" aria-selected="false">Messaging aggregators</button>
+            <button class="matrix__aud" data-aud="fintech" role="tab" aria-selected="false">Fintech</button>
+            <button class="matrix__aud" data-aud="banking" role="tab" aria-selected="false">Banking and payments</button>
+            <button class="matrix__aud" data-aud="fraud" role="tab" aria-selected="false">Fraud-prevention teams</button>
+          </div>
+          <div class="matrix__cases">
+            <div class="matrix__case" data-for="carriers mvnos aggregators">SMS routing optimization</div>
+            <div class="matrix__case" data-for="carriers mvnos">Voice termination</div>
+            <div class="matrix__case" data-for="carriers aggregators">A2P and RCS routing</div>
+            <div class="matrix__case" data-for="carriers mvnos aggregators">Avoiding off-net surcharges</div>
+            <div class="matrix__case" data-for="aggregators fintech banking mvnos">Pre-send validation</div>
+            <div class="matrix__case" data-for="fintech banking fraud">Fraud and account-takeover prevention</div>
+            <div class="matrix__case" data-for="fintech banking fraud">KYC and sign-up checks</div>
+            <div class="matrix__case" data-for="aggregators fraud">Marketing-list cleaning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESOURCES ============ -->
+    <section class="section section--tint" id="resources">
+      <div class="container">
+        <p class="eyebrow reveal">Resources</p>
+        <h2 class="reveal d-1">Available downloads.</h2>
+        <p class="section__lead reveal d-2">The company overview deck, technical specifications and reference docs — in PDF or online.</p>
+
+        <div class="resources__grid">
+          <article class="card resource reveal">
+            <p class="mono-sm accent">PDF · ~600 KB · 10 SLIDES</p>
+            <h3>num-iD Company Overview</h3>
+            <p>Who we are, what we do, the value we bring, and a real ROI example.</p>
+            <div class="resource__actions">
+              <a href="#" class="btn btn--ghost btn--sm" aria-disabled="true">Download PDF</a>
+              <a href="#" class="text-link">View online →</a>
+            </div>
+          </article>
+          <article class="card resource reveal d-1">
+            <p class="mono-sm accent">PDF · ~350 KB · SPEC</p>
+            <h3>HTTP Interface</h3>
+            <p>Query specification for Identify and Verify over HTTPS — endpoints, authentication, status codes, query types and example responses for NRI, MNP and HLR.</p>
+            <div class="resource__actions">
+              <a href="#" class="btn btn--ghost btn--sm" aria-disabled="true">Download PDF</a>
+              <a href="#" class="text-link">View online →</a>
+            </div>
+          </article>
+          <article class="card resource reveal d-2">
+            <p class="mono-sm accent">PDF · ~330 KB · REFERENCE</p>
+            <h3>Response parameters and values</h3>
+            <p>Reference for response fields, release codes, validation codes and number-status codes returned by num-iD services.</p>
+            <div class="resource__actions">
+              <a href="#" class="btn btn--ghost btn--sm" aria-disabled="true">Download PDF</a>
+              <a href="#" class="text-link">View online →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="blog__head">
+          <div>
+            <p class="eyebrow reveal">From the blog</p>
+            <h2 class="reveal d-1">Notes on number intelligence, routing and fraud.</h2>
+          </div>
+          <a href="#" class="text-link reveal d-2">See full blog →</a>
+        </div>
+
+        <div class="blog__grid">
+          <article class="card post reveal">
+            <p class="mono-sm"><span class="accent">VERIFY</span> · SEP 12, 2025</p>
+            <h3>HLR Lookup: The Secret Weapon for Smarter Financial Security</h3>
+            <p>How real-time mobile network checks help fintech, banking and payments fight account-takeover fraud.</p>
+            <a href="#" class="text-link">Read more →</a>
+          </article>
+          <article class="card post reveal d-1">
+            <p class="mono-sm"><span class="accent">IDENTIFY</span> · AUG 5, 2025</p>
+            <h3>Optimizing SMS Routing with MNP: a Strategic Approach for SMS Aggregators</h3>
+            <p>Why route-by-range fails for over 40% of mobile traffic, and how MNP data turns that into reliable margin.</p>
+            <a href="#" class="text-link">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--contact" id="contact">
+      <div class="container contact__grid">
+        <div>
+          <h2 class="reveal">Let’s work together.</h2>
+          <p class="section__lead reveal d-1">Tell us about your traffic and we’ll get back within one business day. Demos, technical questions, custom volumes — all welcome.</p>
+          <a href="mailto:hello@num-id.com" class="btn btn--accent reveal d-2">Send enquiry</a>
+        </div>
+        <div class="contact__details reveal d-2">
+          <div class="contact__row">
+            <span class="mono-sm muted">EMAIL</span>
+            <a href="mailto:hello@num-id.com">hello@num-id.com</a>
+          </div>
+          <div class="contact__row">
+            <span class="mono-sm muted">LINKEDIN</span>
+            <a href="https://linkedin.com/company/num-id" target="_blank" rel="noopener">linkedin.com/company/num-id</a>
+          </div>
+          <div class="contact__row">
+            <span class="mono-sm muted">ADDRESS</span>
+            <p>Digital Works Business LLC,<br>407 Lincoln Road Suite 12 N,<br>33139 Miami Beach, FL — USA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__ticker mono" aria-hidden="true">
+      <div class="footer__ticker-track">
+        <span>34630081191 · 214/07 · 1-00 · HTTP 201 · 184MS&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span>34630081191 · 214/07 · 1-00 · HTTP 201 · 184MS&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span>34630081191 · 214/07 · 1-00 · HTTP 201 · 184MS&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span>34630081191 · 214/07 · 1-00 · HTTP 201 · 184MS&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+      </div>
+    </div>
+    <div class="container footer__main">
+      <div class="footer__brand">
+        <a href="#top" class="nav__logo">num-<span>iD</span></a>
+        <p>Global numerical intelligence services and trusted data for telecom.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="mono-sm muted">PRODUCTS</p>
+          <a href="#products">Identify (MNP)</a>
+          <a href="#products">Verify (HLR)</a>
+          <a href="#resources">Downloads</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono-sm muted">COMPANY</p>
+          <a href="#about">About</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono-sm muted">LEGAL / REACH US</p>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="mailto:hello@num-id.com">hello@num-id.com</a>
+          <a href="https://linkedin.com/company/num-id" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 num-iD. All rights reserved.</span>
+      <a href="https://portal.num-id.com/" target="_blank" rel="noopener" class="text-link">Customer Portal →</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
