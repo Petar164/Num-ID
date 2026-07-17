@@ -5,24 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>num-iD — Numerical Intelligence for Telecom</title>
   <meta name="description" content="Real-time MSISDN intelligence for routing, fraud prevention and number validation. Two products, one input: a phone number.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="num-iD — Numerical Intelligence for Telecom">
+  <meta property="og:description" content="Real-time MSISDN intelligence for routing, fraud prevention and number validation. Two products, one input: a phone number.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23050505'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23F2DF00'>iD</text></svg>">
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progressBar" aria-hidden="true"></div>
+
   <!-- ============ NAV ============ -->
   <header class="nav" id="top">
     <div class="nav__inner container">
       <a href="#top" class="nav__logo" aria-label="num-iD home">num-<span>iD</span></a>
       <nav class="nav__links" id="navLinks" aria-label="Main navigation">
-        <a href="#products">Products</a>
-        <a href="#about">Company</a>
-        <a href="#resources">Resources</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
+        <a href="#products" data-spy>Products</a>
+        <a href="#about" data-spy>Company</a>
+        <a href="#coverage" data-spy>Coverage</a>
+        <a href="#resources" data-spy>Resources</a>
+        <a href="#blog" data-spy>Blog</a>
+        <a href="#contact" data-spy>Contact</a>
         <a href="https://portal.num-id.com/" target="_blank" rel="noopener" class="btn btn--accent btn--sm nav__cta">Customer Portal</a>
       </nav>
       <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
@@ -31,7 +40,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ============ HERO ============ -->
     <section class="hero">
@@ -89,7 +98,7 @@
       <div class="hero__scroll mono">SCROLL ↓</div>
     </section>
 
-    <!-- ============ STATS ============ -->
+    <!-- ============ STATS (yellow band) ============ -->
     <section class="stats">
       <div class="stats__grid container">
         <div class="stat reveal">
@@ -210,18 +219,18 @@
         <p class="section__lead reveal d-2">A single HTTPS call to your nearest regional PoP — we operate multiple, so you route to the closest one. Sub-second response. Pick the product by the question you need answered.</p>
 
         <div class="products__grid">
-          <article class="product card reveal">
+          <article class="product product--yellow card reveal">
             <p class="product__tag">IDENTIFY · MNP LOOKUP</p>
             <h3>Know which network owns the number today.</h3>
             <p>Mobile Number Portability data tells you the current network provider of any mobile number, including ported numbers. Numbering ranges alone get it wrong for 40%+ of mobile traffic.</p>
             <div class="product__block">
-              <span class="mono-sm muted">RETURNS</span>
+              <span class="mono-sm">RETURNS</span>
               <div class="chips">
                 <span class="chip">oc</span><span class="chip">on</span><span class="chip">od</span><span class="chip">mcc/mnc</span><span class="chip">pi</span><span class="chip">rc</span>
               </div>
             </div>
             <div class="product__block">
-              <span class="mono-sm muted">USE CASES</span>
+              <span class="mono-sm">USE CASES</span>
               <ul class="ticklist">
                 <li>SMS routing optimization</li>
                 <li>Voice termination</li>
@@ -352,18 +361,15 @@ curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">346300811
             </span>
           </div>
           <svg viewBox="0 0 760 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Regional routing topology diagram">
-            <!-- paths -->
             <path class="tp-line tp-line--main" d="M150 120 H 330"/>
             <path class="tp-line tp-line--dash" d="M150 120 C 230 40, 300 40, 380 62"/>
             <path class="tp-line tp-line--dash" d="M150 120 C 230 200, 300 200, 380 178"/>
             <path class="tp-line tp-line--main" d="M430 120 H 610"/>
             <path class="tp-line tp-line--dash" d="M430 70 C 500 70, 540 95, 610 112"/>
             <path class="tp-line tp-line--dash" d="M430 170 C 500 170, 540 145, 610 128"/>
-            <!-- client -->
             <rect x="40" y="96" width="110" height="48" rx="6" class="tp-node"/>
             <text x="95" y="116" class="tp-label" text-anchor="middle">CLIENT</text>
             <text x="95" y="132" class="tp-sub" text-anchor="middle">source IP</text>
-            <!-- pops -->
             <rect x="330" y="96" width="100" height="48" rx="6" class="tp-node tp-node--hot"/>
             <text x="380" y="116" class="tp-label tp-label--hot" text-anchor="middle">EU-WEST</text>
             <text x="380" y="132" class="tp-sub" text-anchor="middle">nearest PoP</text>
@@ -371,11 +377,9 @@ curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">346300811
             <text x="380" y="62" class="tp-label" text-anchor="middle">US-EAST</text>
             <rect x="330" y="162" width="100" height="40" rx="6" class="tp-node"/>
             <text x="380" y="186" class="tp-label" text-anchor="middle">AP-SOUTH</text>
-            <!-- output -->
             <rect x="610" y="96" width="120" height="48" rx="6" class="tp-node"/>
             <text x="670" y="116" class="tp-label" text-anchor="middle">JSON</text>
             <text x="670" y="132" class="tp-sub" text-anchor="middle">normalized output</text>
-            <!-- moving packets -->
             <circle class="tp-packet" r="4"><animateMotion dur="3s" repeatCount="indefinite" path="M150 120 H 330"/></circle>
             <circle class="tp-packet" r="4"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M430 120 H 610"/></circle>
           </svg>
@@ -383,8 +387,44 @@ curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">346300811
       </div>
     </section>
 
-    <!-- ============ USE-CASE MATRIX ============ -->
-    <section class="section" id="matrix">
+    <!-- ============ COVERAGE GLOBE ============ -->
+    <section class="section section--coverage" id="coverage">
+      <div class="container">
+        <div class="coverage__head">
+          <div>
+            <p class="eyebrow reveal">Coverage map</p>
+            <h2 class="reveal d-1">100+ countries in production.</h2>
+            <p class="section__lead reveal d-2">Hover any country for its response times, routed through its nearest regional PoP. MNP and HLR data sourced directly from regulators and carriers.</p>
+          </div>
+          <span class="coverage__badge mono-sm reveal d-2" title="Figures shown are placeholders until measured per-country data is published">Simulated data</span>
+        </div>
+
+        <div class="coverage__grid reveal d-3">
+          <div class="globe" id="globeWrap">
+            <div id="globeViz" aria-hidden="true"></div>
+            <p class="globe__fallback mono-sm" id="globeFallback" hidden>Interactive globe unavailable — MNP and HLR live in 100+ countries.</p>
+          </div>
+          <aside class="coverage__panel" aria-live="polite">
+            <div class="coverage__panel-bar mono-sm"><span id="covTitle">GLOBAL NETWORK</span><i class="dot"></i></div>
+            <div class="coverage__rows" id="covDefault">
+              <div class="covrow"><span>Countries in production</span><strong>100+</strong></div>
+              <div class="covrow"><span>Regional PoPs</span><strong>EU-WEST · US-EAST · AP-SOUTH</strong></div>
+              <div class="covrow"><span>Success ratio</span><strong>99.95%</strong></div>
+              <p class="coverage__hint mono-sm">Hover a country on the globe →</p>
+            </div>
+            <div class="coverage__rows" id="covCountry" hidden>
+              <div class="covrow"><span>MNP response</span><strong id="covMnp">—</strong></div>
+              <div class="covrow"><span>HLR response</span><strong id="covHlr">—</strong></div>
+              <div class="covrow"><span>Nearest PoP</span><strong id="covPop">—</strong></div>
+              <div class="covrow"><span>Status</span><strong class="cov-ok">IN PRODUCTION</strong></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ USE-CASE MATRIX (yellow block) ============ -->
+    <section class="section section--yellow" id="matrix">
       <div class="container">
         <p class="eyebrow reveal">Use-case matrix</p>
         <h2 class="reveal d-1">Audience needs mapped to routing and validation work.</h2>
@@ -479,25 +519,25 @@ curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">346300811
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section section--contact" id="contact">
+    <!-- ============ CONTACT (yellow block) ============ -->
+    <section class="section section--yellow section--contact" id="contact">
       <div class="container contact__grid">
         <div>
           <h2 class="reveal">Let’s work together.</h2>
           <p class="section__lead reveal d-1">Tell us about your traffic and we’ll get back within one business day. Demos, technical questions, custom volumes — all welcome.</p>
-          <a href="mailto:hello@num-id.com" class="btn btn--accent reveal d-2">Send enquiry</a>
+          <a href="mailto:hello@num-id.com" class="btn btn--dark reveal d-2">Send enquiry</a>
         </div>
         <div class="contact__details reveal d-2">
           <div class="contact__row">
-            <span class="mono-sm muted">EMAIL</span>
+            <span class="mono-sm">EMAIL</span>
             <a href="mailto:hello@num-id.com">hello@num-id.com</a>
           </div>
           <div class="contact__row">
-            <span class="mono-sm muted">LINKEDIN</span>
+            <span class="mono-sm">LINKEDIN</span>
             <a href="https://linkedin.com/company/num-id" target="_blank" rel="noopener">linkedin.com/company/num-id</a>
           </div>
           <div class="contact__row">
-            <span class="mono-sm muted">ADDRESS</span>
+            <span class="mono-sm">ADDRESS</span>
             <p>Digital Works Business LLC,<br>407 Lincoln Road Suite 12 N,<br>33139 Miami Beach, FL — USA</p>
           </div>
         </div>
@@ -549,6 +589,7 @@ curl -s "https://api.num-id.com/query/<span class="hl" id="curlMsisdn">346300811
     </div>
   </footer>
 
+  <script src="assets/js/latency-data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
